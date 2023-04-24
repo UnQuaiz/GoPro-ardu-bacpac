@@ -1,16 +1,16 @@
-#MewPro
-
+# MewPro
 Arduino BacPac™ for GoPro Hero 3+ Black: GoPro can be controlled by Arduino Pro Mini attached on Herobus.
 
+----
 Resources:
 * Introduction to MewPro: [http://mewpro.cc/?p=226]
-* Schematic Drawing: [http://mewpro.cc/?p=204]
-* List of GoPro Serial Commands: [http://mewpro.cc/2014/10/14/list-of-i%C2%B2c-commands/]
-* Herobus Pinout of GoPro Hero 3+ Black: [http://mewpro.cc/?p=207]
-
+* Schematic Drawing: **[PDF](MewPro%2FMewPro-ver1.1.pdf) | [Eagle](MewPro%2FMewPro-ver1.1.sch)**
+* [List of GoPro Serial Commands](MewPro%2Flist-of-i2c-commands.md)
+* [Herobus Pinout of GoPro Hero 3+ Black](MewPro%2FHeroBus%2BPinouts.md)
+* GoPro USB tools [https://github.com/evilwombat/gopro-usb-tools]
 ------
 
-###How To Compile
+### How To Compile
 The following small-factor microcontroller boards are known to work with MewPro at least core functionalities and fit within the GoPro housing. Not all the sensors, however, are supported by each of them.
 
 * Arduino Pro Mini 328 3.3V 8MHz
@@ -54,8 +54,14 @@ The following small-factor microcontroller boards are known to work with MewPro 
 
 ------
 
-###Serial Line Commands
-By default MewPro is configured to use the serial line for controlling GoPro. All the commands are listed at https://gist.github.com/orangkucing/45dd2046b871828bf592#file-gopro-i2ccommands-md . You can simply type a command string to the serial console followed by a return; for example,
+### Serial Line Commands
+By default MewPro is configured to use the serial line for controlling GoPro.
+All the commands are listed at:
+- https://gist.github.com/orangkucing/45dd2046b871828bf592#file-gopro-i2ccommands-md.
+- https://orangkucing.github.io/Hero4_I2C_Commands.html
+- https://gethypoxic.com/blogs/technical/gopro-herobus-for-gopro-hero5
+
+You can simply type a command string to the serial console followed by a return; for example,
 
 + `PW0` : shutdown GoPro
 + `TM0E0A0D090F00` : set GoPro clock to 2014-10-13 09:15:00 (hexadecimal of YYYY-MM-DD hh:mm:ss)
@@ -86,17 +92,18 @@ If you like to use these functions please refer the corresponding .ino files.
 
 ------
 
-###Genlock Dongle
-MewPro is designed to work with Genlock Dongle [https://github.com/orangkucing/GenlockDongle]
+### Genlock Dongle
+MewPro is designed to work with [Genlock Dongle](https://github.com/orangkucing/GenlockDongle)
+
 Please refer the repository for details.
 
-To use MewPro source code with Genlock Dongle, please #define USE_GENLOCK and set EEPROM (by using "!" command) as "master" for not only MewPro #0 but also MewPros #1, #2, #3, ...
+To use MewPro source code with Genlock Dongle, please `#define USE_GENLOCK` and set `EEPROM` (by using "!" command) as "master" for not only MewPro #0 but also MewPros #1, #2, #3, ...
 
-For MewPro #0 it must be set debug = false, and for other MewPros this setting does no harm. So you can always set debug = false if you use this source code with Genlock Dongle.
+For MewPro #0 it must be set `debug = false`, and for other MewPros this setting does no harm. So you can always set debug = false if you use this source code with Genlock Dongle.
 
 ------
 
-###Timelapse (non-genlock MewPro software)
+### Timelapse (non-genlock MewPro software)
 MewPro in non-genlock supports start/stop of GoPro's timelapse. However a misuse will cause firmware corruption of your GoPro and you'll need to reinsall the firmware. 
 
 + GoPro must be power-on in timelapse mode and interval must be set beforehand.
