@@ -7,7 +7,10 @@ Resources:
 * Schematic Drawing: **[PDF](MewPro%2FMewPro-ver1.1.pdf) | [Eagle](MewPro%2FMewPro-ver1.1.sch)**
 * [List of GoPro Serial Commands](MewPro%2Flist-of-i2c-commands.md)
 * [Herobus Pinout of GoPro Hero 3+ Black](MewPro%2FHeroBus%2BPinouts.md)
-* GoPro USB tools [https://github.com/evilwombat/gopro-usb-tools]
+* GoPro USB tools [ https://github.com/evilwombat/gopro-usb-tools ]
+* https://github.com/KonradIT/gopro-herobus-sdk
+* https://github.com/KonradIT/goprowifihack
+* https://gopro.github.io/OpenGoPro/
 ------
 
 ### How To Compile
